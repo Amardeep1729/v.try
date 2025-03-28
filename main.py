@@ -5,7 +5,7 @@ import musiclibrary
 import requests
 from openai import OpenAI
 from gtts import gTTS
-from dotenv import load_dotenv
+
 import pygame
 import os
 import random
@@ -14,7 +14,7 @@ import random
 
 recognizer = sr.Recognizer()
 engine = pyttsx3.init()
-newsapi = "your news API"
+newsapi = "18c77e045b1646da94bf5c9acbc77f5f"
 
 def speak_old(text):
     engine.say(text)
@@ -43,7 +43,7 @@ def speak_old(text):
 #     os.remove   
 
 def aiProcess(command)   :
-    client = OpenAI(api_key= "you openai api key"
+    client = OpenAI(api_key= "your api key"
     )
 
     completion = client.chat.completions.create(
@@ -98,7 +98,7 @@ if __name__== "__main__":
         try:
             with sr.Microphone() as source:
                 print("Listening")
-                audio = r.listen(source, timeout=6 , phrase_time_limit=35)
+                audio = r.listen(source, timeout=6 , phrase_time_limit=3)
             word = r.recognize_google(audio)    
             if (word.lower() == "jarvis"):
                 words = ["how can i help you", "Yaa" , "Hello how can i help you", "Yes ! tell me..", "Yes" , "Hi How was your day"]
@@ -118,3 +118,4 @@ if __name__== "__main__":
             
 
             
+ 
